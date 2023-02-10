@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+
+until ($ARGV == 0) {
+    $arg = shift;
+    if ($arg eq "-e") {
+        $regex = shift;
+    } elsif ($arg eq "-m") {
+        $max_num = shift;
+    } elsif ($arg eq "-i") {
+        $ignore_upper = 1;
+    } elsif ($arg eq "-n") {
+        $numerate = 1;
+    } 
+}

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+show_help() {
+    echo "Usage: ./exec_repeater [-h] <program> <interval>"
+    echo "Repeats the <program> every <interval> minutes."
+}
+
+
+[ "$1" == "-h" ] && show_help && exit 0
+[ $# -ne 2 ] && show_help && exit 1
+
+program="$1"
+interval=$2
+
+STDOUT_FILE=./$program\_stdout
+STDERR_FILE=./$program\_stderr
+
+$program > $STDOUT_FILE 2> $STDERR_FILE &
+
+while true; do
+    sleep $(( $interval * 60 ))
+    if ! ps -p $! > /dev/null; then
+        $program >> $STDOUT_FILE 2>> $STDERR_FILE &
+    fi
+done

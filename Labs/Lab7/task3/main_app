@@ -1,0 +1,13 @@
+#!/usr/bin/env perl
+use strict;
+
+use lib "./";
+use PasswordGen qw(gen_pass);
+
+sub MAIN {
+    for(my $i=0;$i<$ARGV[1];$i++) {
+        print gen_pass($ARGV[0]), "\n";
+    }
+}
+
+MAIN;

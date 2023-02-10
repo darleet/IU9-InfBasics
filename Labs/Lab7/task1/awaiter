@@ -1,0 +1,4 @@
+#!/bin/bash
+time=120
+echo awaiting $time secs...
+sleep $time

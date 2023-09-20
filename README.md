@@ -1,7 +1,7 @@
 # [ИУ9] Основы информатики
 
 * [Вопросы к экзамену](Materials/exam.md)
-* [Лекции](Materials/#lections)
+* [Лекции](#lections)
 
 
 ## Модуль I
